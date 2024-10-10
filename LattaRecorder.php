@@ -1,7 +1,9 @@
 <?php
 
 namespace LattaAi\Reporter;
+
 use ErrorException;
+use LattaAi\Reporter\Models\LattaInstance;
 
 class LattaRecorder
 {
