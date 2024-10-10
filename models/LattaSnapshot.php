@@ -1,7 +1,6 @@
 <?php
 
 namespace LattaAi\Reporter\Models;
-use Exception;
 
 class LattaSnapshot
 {
@@ -18,7 +17,7 @@ class LattaSnapshot
         $this->related_to_relation_id = $related_to_relation_id;
     }
 
-    public function getId(): string {
+    public function getId() {
         return $this->id;
     }
 }

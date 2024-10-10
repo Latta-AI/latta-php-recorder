@@ -1,7 +1,6 @@
 <?php
 
 namespace LattaAi\Reporter\Models;
-use Exception;
 
 class LattaInstance
 {
@@ -23,7 +22,7 @@ class LattaInstance
         $this->device = $device;
     }
 
-    public function getId(): string {
+    public function getId() {
         return $this->id;
     }
 }
