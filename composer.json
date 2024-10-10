@@ -1,0 +1,20 @@
+{
+    "name": "lattaai/latta-laravel-reporter",
+    "type": "library",
+    "description": "Latta Laravel Reporter",
+    "keywords": ["latta"],
+    "homepage": "https://latta.ai",
+    "authors": [
+        {
+            "name": "Latta AI s.r.o.",
+            "email": "ínfo@latta.at"
+        }
+    ],
+    "require": {
+        "php": ">=5.0",
+        "brandembassy/php-memory": "^1.2"
+    },
+    "autoload": {
+        "psr-4": { "LattaAi\\LattaLaravelReporter\\": "" }
+    }
+}
