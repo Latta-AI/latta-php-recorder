@@ -6,7 +6,7 @@ To implement Latta into PHP backend do:
 composer require lattaai/latta-php-recorder
 ```
 
-1. Inject Into All PHP Files (you can create latta.php file and inject file)
+2. Inject Into All PHP Files (you can create latta.php file and inject file)
 
 ```
 use LattaAi\LattaLaravelReporter\LattaRecorder;
