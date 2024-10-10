@@ -3,7 +3,7 @@
 namespace LattaAi\Recorder;
 
 use ErrorException;
-use LattaAi\Recorder\Models\LattaInstance;
+use LattaAi\Recorder\models\LattaInstance;
 
 class LattaRecorder
 {

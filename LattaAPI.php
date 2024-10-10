@@ -2,8 +2,8 @@
 
 namespace LattaAi\Recorder;
 use Exception;
-use LattaAi\Recorder\Models\LattaInstance;
-use LattaAi\Recorder\Models\LattaSnapshot;
+use LattaAi\Recorder\models\LattaInstance;
+use LattaAi\Recorder\models\LattaSnapshot;
 
 class LattaAPI {
 
