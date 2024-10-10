@@ -17,5 +17,7 @@
     },
     "autoload": {
         "psr-4": { "LattaAi\\Recorder\\": "" }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
