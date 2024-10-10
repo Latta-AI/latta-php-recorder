@@ -7,7 +7,7 @@ use LattaAi\Recorder\models\LattaInstance;
 
 class LattaRecorder
 {
-    private $api;
+    protected $api;
     public static $logs = [];
     public static $relationID;
 
