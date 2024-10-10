@@ -27,9 +27,9 @@ class LattaRecorder
         $this->relationID = isset($_COOKIE["Latta-Recording-Relation-Id"]) ? $_COOKIE["Latta-Recording-Relation-Id"] :
             (isset($_SERVER['HTTP_LATTA_RECORDING_RELATION_ID']) ? $_SERVER['HTTP_LATTA_RELATION_ID'] : null);
 
-        if ($this->relationID == null) {
-            $this->relationID = LattaUtils::uuidv4();
-            setcookie("Latta-Recording-Relation-Id", $this->relationID, time() + (10 * 365 * 24 * 60 * 60), "/");
+        if (LattaRecorder::$relationID == null) {
+            LattaRecorder::$relationID = LattaUtils::uuidv4();
+            setcookie("Latta-Recording-Relation-Id", LattaRecorder::$relationID, time() + (10 * 365 * 24 * 60 * 60), "/");
         }
 
         $thisObj = $this;

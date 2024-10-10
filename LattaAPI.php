@@ -43,8 +43,6 @@ class LattaAPI {
 
         curl_close($ch);
 
-        var_dump($response);
-
         $decodedResponse = json_decode($response);
 
         $instance = new LattaInstance($decodedResponse->id);
