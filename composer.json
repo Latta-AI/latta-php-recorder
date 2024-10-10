@@ -4,6 +4,7 @@
     "description": "Latta PHP Recorder",
     "keywords": ["latta"],
     "homepage": "https://latta.ai",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Latta AI s.r.o.",
