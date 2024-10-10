@@ -45,12 +45,12 @@ class LattaRecorder
             switch ($severity) {
                 case E_USER_ERROR:
                     $lattaInstance = new LattaInstance($_COOKIE["Latta-Recording-Relation-Id"]);
-                    $lattaSnapshot = $this->api->putSnapshot($lattaInstance, "", null, LattaRecorder::$relationID);
+                    $lattaSnapshot = $thisObj->api->putSnapshot($lattaInstance, "", null, LattaRecorder::$relationID);
 
                     $exception = new ErrorException($message, 0, $severity, $file, $line);
                     $attachment = new LattaAttachment($exception, LattaRecorder::$logs);
 
-                    $this->api->putAttachment($lattaSnapshot, $attachment);
+                    $thisObj->api->putAttachment($lattaSnapshot, $attachment);
                     exit(1);
                 case E_USER_WARNING:
                     array_push(LattaRecorder::$logs, ["level" => "WARN", "message" => $message, "timestamp" => time()]);
