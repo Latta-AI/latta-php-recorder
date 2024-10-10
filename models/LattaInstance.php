@@ -1,6 +1,6 @@
 <?php
 
-namespace LattaAi\Reporter\Models;
+namespace LattaAi\Recorder\Models;
 
 class LattaInstance
 {

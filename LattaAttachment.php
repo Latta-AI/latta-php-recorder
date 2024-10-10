@@ -1,6 +1,6 @@
 <?php
 
-namespace Lattaai\Reporter;
+namespace LattaAi\Recorder;
 use BrandEmbassy\Memory\MemoryConfiguration;
 use BrandEmbassy\Memory\MemoryLimitProvider;
 use Exception;

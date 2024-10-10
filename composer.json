@@ -1,7 +1,7 @@
 {
-    "name": "lattaai/latta-laravel-reporter",
+    "name": "lattaai/latta-php-recorder",
     "type": "library",
-    "description": "Latta Laravel Reporter",
+    "description": "Latta PHP Recorder",
     "keywords": ["latta"],
     "homepage": "https://latta.ai",
     "authors": [
@@ -15,6 +15,6 @@
         "brandembassy/php-memory": "^1.2"
     },
     "autoload": {
-        "psr-4": { "LattaAi\\LattaLaravelReporter\\": "" }
+        "psr-4": { "LattaAi\\Recorder\\": "" }
     }
 }

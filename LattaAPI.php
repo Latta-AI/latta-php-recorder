@@ -1,9 +1,9 @@
 <?php
 
-namespace LattaAi\Reporter;
+namespace LattaAi\Recorder;
 use Exception;
-use LattaAi\LattaLaravelReporter\Models\LattaInstance;
-use LattaAi\LattaLaravelReporter\Models\LattaSnapshot;
+use LattaAi\Recorder\Models\LattaInstance;
+use LattaAi\Recorder\Models\LattaSnapshot;
 
 class LattaAPI {
 
