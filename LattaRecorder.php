@@ -24,7 +24,7 @@ class LattaRecorder
             file_put_contents("latta-instance.txt", $lattaInstance->getId());
         }
 
-        $this->relationID = isset($_COOKIE["Latta-Recording-Relation-Id"]) ? $_COOKIE["Latta-Recording-Relation-Id"] :
+        LattaRecorder::$relationID = isset($_COOKIE["Latta-Recording-Relation-Id"]) ? $_COOKIE["Latta-Recording-Relation-Id"] :
             (isset($_SERVER['HTTP_LATTA_RECORDING_RELATION_ID']) ? $_SERVER['HTTP_LATTA_RELATION_ID'] : null);
 
         if (LattaRecorder::$relationID == null) {
