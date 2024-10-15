@@ -14,7 +14,7 @@ class LattaAPI {
         $this->apiKey = $apiKey;
     }
 
-    public function putInstance($framework, $framework_version, $os, $lang, $device)
+    public function putInstance($framework, $framework_version, $os, $lang, $device): LattaInstance    
     {
         $data = [
             "framework" => $framework,
@@ -49,7 +49,7 @@ class LattaAPI {
         return $instance;
     }
 
-    public function putSnapshot(LattaInstance $instance, $message, $relation_id = null, $related_to_relation_id = null)
+    public function putSnapshot(LattaInstance $instance, $message, $relation_id = null, $related_to_relation_id = null): LattaSnapshot
     {
         $data = [
             "message" => $message,
