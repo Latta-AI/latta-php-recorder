@@ -50,7 +50,7 @@ class LattaRecorder
                     $exception = new ErrorException($message, 0, $severity, $file, $line);
                     $attachment = new LattaAttachment($exception, LattaRecorder::$logs);
 
-                    $thisObj->api->putAttachment($lattaSnapshot, $attachment);
+                    $thisObj->api->putAttachment($lattaSnapshot, $attachment->toString());
                     exit(1);
                 case E_USER_WARNING:
                     array_push(LattaRecorder::$logs, ["level" => "WARN", "message" => $message, "timestamp" => time()]);
