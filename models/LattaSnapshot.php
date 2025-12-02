@@ -1,6 +1,6 @@
 <?php
 
-namespace LattaAi\Recorder\Models;
+namespace LattaAi\Recorder\models;
 
 class LattaSnapshot
 {

@@ -3,11 +3,11 @@
 namespace LattaAi\Recorder;
 
 use ErrorException;
-use LattaAi\Recorder\Models\LattaInstance;
+use LattaAi\Recorder\models\LattaInstance;
 
 class LattaRecorder
 {
-    private $api;
+    protected $api;
     public static $logs = [];
     public static $relationID;
 
@@ -24,12 +24,12 @@ class LattaRecorder
             file_put_contents("latta-instance.txt", $lattaInstance->getId());
         }
 
-        $this->relationID = isset($_COOKIE["Latta-Recording-Relation-Id"]) ? $_COOKIE["Latta-Recording-Relation-Id"] :
+        LattaRecorder::$relationID = isset($_COOKIE["Latta-Recording-Relation-Id"]) ? $_COOKIE["Latta-Recording-Relation-Id"] :
             (isset($_SERVER['HTTP_LATTA_RECORDING_RELATION_ID']) ? $_SERVER['HTTP_LATTA_RELATION_ID'] : null);
 
-        if ($this->relationID == null) {
-            $this->relationID = LattaUtils::uuidv4();
-            setcookie("Latta-Recording-Relation-Id", $this->relationID, time() + (10 * 365 * 24 * 60 * 60), "/");
+        if (LattaRecorder::$relationID == null) {
+            LattaRecorder::$relationID = LattaUtils::uuidv4();
+            setcookie("Latta-Recording-Relation-Id", LattaRecorder::$relationID, time() + (10 * 365 * 24 * 60 * 60), "/");
         }
 
         $thisObj = $this;
@@ -45,12 +45,12 @@ class LattaRecorder
             switch ($severity) {
                 case E_USER_ERROR:
                     $lattaInstance = new LattaInstance($_COOKIE["Latta-Recording-Relation-Id"]);
-                    $lattaSnapshot = $this->api->putSnapshot($lattaInstance, "", null, LattaRecorder::$relationID);
+                    $lattaSnapshot = $thisObj->api->putSnapshot($lattaInstance, "", null, LattaRecorder::$relationID);
 
                     $exception = new ErrorException($message, 0, $severity, $file, $line);
                     $attachment = new LattaAttachment($exception, LattaRecorder::$logs);
 
-                    $this->api->putAttachment($lattaSnapshot, $attachment);
+                    $thisObj->api->putAttachment($lattaSnapshot, $attachment->toString());
                     exit(1);
                 case E_USER_WARNING:
                     array_push(LattaRecorder::$logs, ["level" => "WARN", "message" => $message, "timestamp" => time()]);

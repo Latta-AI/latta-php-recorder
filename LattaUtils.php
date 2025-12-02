@@ -1,6 +1,6 @@
 <?php
 
-namespace Lattaai\Reporter;
+namespace LattaAi\Recorder;
 
 class LattaUtils
 {

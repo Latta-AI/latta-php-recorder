@@ -4,7 +4,8 @@
     "description": "Latta PHP Recorder",
     "keywords": ["latta"],
     "homepage": "https://latta.ai",
-    "version": "1.0.0",
+    "version": "1.5.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Latta AI s.r.o.",
@@ -12,10 +13,11 @@
         }
     ],
     "require": {
-        "php": ">=5.0",
-        "brandembassy/php-memory": "^1.2"
+        "php": ">=7.0"
     },
     "autoload": {
         "psr-4": { "LattaAi\\Recorder\\": "" }
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

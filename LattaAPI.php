@@ -2,8 +2,8 @@
 
 namespace LattaAi\Recorder;
 use Exception;
-use LattaAi\Recorder\Models\LattaInstance;
-use LattaAi\Recorder\Models\LattaSnapshot;
+use LattaAi\Recorder\models\LattaInstance;
+use LattaAi\Recorder\models\LattaSnapshot;
 
 class LattaAPI {
 
@@ -14,7 +14,7 @@ class LattaAPI {
         $this->apiKey = $apiKey;
     }
 
-    public function putInstance($framework, $framework_version, $os, $lang, $device)
+    public function putInstance($framework, $framework_version, $os, $lang, $device): LattaInstance    
     {
         $data = [
             "framework" => $framework,
@@ -43,15 +43,13 @@ class LattaAPI {
 
         curl_close($ch);
 
-        var_dump($response);
-
         $decodedResponse = json_decode($response);
 
         $instance = new LattaInstance($decodedResponse->id);
         return $instance;
     }
 
-    public function putSnapshot(LattaInstance $instance, $message, $relation_id = null, $related_to_relation_id = null)
+    public function putSnapshot(LattaInstance $instance, $message, $relation_id = null, $related_to_relation_id = null): LattaSnapshot
     {
         $data = [
             "message" => $message,
