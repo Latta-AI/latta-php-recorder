@@ -1,8 +1,6 @@
 <?php
 
 namespace LattaAi\Recorder;
-use BrandEmbassy\Memory\MemoryConfiguration;
-use BrandEmbassy\Memory\MemoryLimitProvider;
 use Exception;
 use stdClass;
 
@@ -26,19 +24,7 @@ class LattaAttachment {
         return $load;
     }
 
-    private function getRAM() {
-        $configuration = new MemoryConfiguration();
-        $limitProvider = new MemoryLimitProvider($configuration);
-
-        return [
-            "free_memory" => $limitProvider->getLimitInBytes() - memory_get_usage(),
-            "total_memory" => $limitProvider->getLimitInBytes()
-        ];
-    }
-
     public function toString() {
-        $ramValues = $this->getRAM();
-
         $query = [];
 
         foreach($_GET as $key => $value)
@@ -68,8 +54,8 @@ class LattaAttachment {
                 "stack" => $this->e->getTraceAsString(),
                 "environment_variables" => new stdClass(),
                 "system_info" => [
-                    "free_memory" => $ramValues["free_memory"],
-                    "total_memory" => $ramValues["total_memory"],
+                    "free_memory" => 0,
+                    "total_memory" => 0,
                     "cpu_usage" => $this->getCPULoad()
                 ],
                 "logs" => [
